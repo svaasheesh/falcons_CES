@@ -1,46 +1,27 @@
 package com.falcons_ces.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import com.falcons_ces.model.*;
+
 public class Student {
-	
-	private int id;
-    private String name;
-    private String password;
-    private String number;
+    private String firstName;
+    private String lastName;
+    private int id;
+    private String major;
+    private List<Test> tests;
 
-      Student(int id, String name, String password, String number){
-    	this.id = id;
-    	this.name = name;
-    	this.number = number;
-    }
-    
-    public Student(String name, String password, String number) {
-    	this.name = name;
-    	this.password = password;
-    	this.number = number;
-    }
-    
-    public int getId() {
-    	return id;
-    }
-    
-    public String getName() {
-    	return name;
-    }
-    
-    public String getNumber() {
-    	return number;
-    }
-    
-    void setName(String name) {
-    	this.name = name;
+    public Student(String firstName, String lastName, int id, String major) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+        this.major = major;
+        this.tests = new ArrayList<>();
     }
 
-    void setPassword(String password) {
-    	this.password = password;   
+    public void addTest(Test test) {
+        this.tests.add(test);
     }
     
-    void setNumber(String number) {
-    	this.number = number;
-    }
     
 }

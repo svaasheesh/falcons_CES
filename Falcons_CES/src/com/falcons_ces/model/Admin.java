@@ -1,38 +1,20 @@
 package com.falcons_ces.model;
+import com.falcons_ces.model.Student;
 
-public class Admin {
-	
-	private int id;
-    private String name;
-    private String password;
-    
-    Admin(int id, String name, String password){
-    	this.id = id;
-    	this.name = name;
+public class  Admin {
+    private String firstName;
+    private String lastName;
+
+    public Admin(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    
-    public Admin(String name, String password) {
-    	this.name = name;
-    	this.password = password;
-    }
-    
-    public int getId() {
-    	return id;
-    }
-    
-    public String getName() {
-    	return name;
-    }
-    
-    void setName(String name) {
-    	this.name = name;
-    }
-    
-    void setPassword(String password) {
-    	this.password = password;   
+
+    public void enrollStudent(Student student, Program program) {
+        program.addStudent(student);
+        System.out.println(student.getFirstName() + " " + student.getLastName() + " has been enrolled in the " + program.getName() + " program.");
     }
 }
-
 
     
 
